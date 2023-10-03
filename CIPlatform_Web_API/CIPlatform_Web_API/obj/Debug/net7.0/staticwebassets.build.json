@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "kbwb4z1v1GAHi7oum6jnlCMWFvX2Qkjz5MLcuf33fUE=",
+  "Source": "CIPlatform_Web_API",
+  "BasePath": "_content/CIPlatform_Web_API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

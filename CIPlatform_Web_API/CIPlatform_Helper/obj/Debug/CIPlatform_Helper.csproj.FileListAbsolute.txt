@@ -1,0 +1,6 @@
+F:\Project_2023\Training\CIPlatform\CIPlatform_Web_API\CIPlatform_Helper\bin\Debug\CIPlatform_Helper.dll
+F:\Project_2023\Training\CIPlatform\CIPlatform_Web_API\CIPlatform_Helper\bin\Debug\CIPlatform_Helper.pdb
+F:\Project_2023\Training\CIPlatform\CIPlatform_Web_API\CIPlatform_Helper\obj\Debug\CIPlatform_Helper.csproj.AssemblyReference.cache
+F:\Project_2023\Training\CIPlatform\CIPlatform_Web_API\CIPlatform_Helper\obj\Debug\CIPlatform_Helper.csproj.CoreCompileInputs.cache
+F:\Project_2023\Training\CIPlatform\CIPlatform_Web_API\CIPlatform_Helper\obj\Debug\CIPlatform_Helper.dll
+F:\Project_2023\Training\CIPlatform\CIPlatform_Web_API\CIPlatform_Helper\obj\Debug\CIPlatform_Helper.pdb
