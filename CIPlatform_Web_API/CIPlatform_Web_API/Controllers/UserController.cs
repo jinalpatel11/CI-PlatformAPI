@@ -83,40 +83,40 @@ namespace CIPlatform_Web_API.Controllers
         }
 
 
-        [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<APIResponse>> CreateUser([FromBody] UserRequestModel createDTO)
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
+        //[HttpPost]
+        //[ProducesResponseType(StatusCodes.Status201Created)]
+        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        //[ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        //public async Task<ActionResult<APIResponse>> CreateUser([FromBody] UserRequestModel createDTO)
+        //{
+        //    try
+        //    {
+        //        if (!ModelState.IsValid)
+        //        {
+        //            return BadRequest(ModelState);
+        //        }
 
 
-                if (createDTO == null)
-                {
-                    return BadRequest(createDTO);
-                }
+        //        if (createDTO == null)
+        //        {
+        //            return BadRequest(createDTO);
+        //        }
 
-                User villa = createDTO.ToEntity();
+        //        User villa = createDTO.ToEntity();
 
-                villa = await UserTableRepository.AddUser(villa);
-                _response.Result = villa;
-                _response.StatusCode = HttpStatusCode.Created;
-                return CreatedAtRoute("GetUser", new { id = villa.Id }, _response);
-            }
-            catch (Exception ex)
-            {
-                _response.IsSuccess = false;
-                _response.ErrorMessages
-                     = new List<string>() { ex.ToString() };
-            }
-            return _response;
-        }
+        //        villa = await UserTableRepository.AddUser(villa);
+        //        _response.Result = villa;
+        //        _response.StatusCode = HttpStatusCode.Created;
+        //        return CreatedAtRoute("GetUser", new { id = villa.Id }, _response);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _response.IsSuccess = false;
+        //        _response.ErrorMessages
+        //             = new List<string>() { ex.ToString() };
+        //    }
+        //    return _response;
+        //}
 
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
@@ -179,130 +179,130 @@ namespace CIPlatform_Web_API.Controllers
             return _response;
         }
 
-        //[HttpPost(Name = "login")]
-        //[ProducesResponseType(StatusCodes.Status204NoContent)]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
-        //public async Task<ActionResult<APIResponse>> login([FromBody] LoginRequestModel loginRequest)
-        //{
-        //    try
-        //    {
-        //        if (loginRequest == null)
-        //        {
-        //            return BadRequest();
-        //        }
+        [HttpPost("login")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<APIResponse>> login([FromBody] LoginRequestModel loginRequest)
+        {
+            try
+            {
+                if (loginRequest == null)
+                {
+                    return BadRequest();
+                }
 
-        //        User dbUser = this.UserTableRepository.GetUsers().Result.FirstOrDefault(x => x.Email == loginRequest.Emial && x.Password == loginRequest.Password);
-        //        _response.Result = dbUser;
-        //        _response.StatusCode = HttpStatusCode.NoContent;
-        //        _response.IsSuccess = true;
-        //        return Ok(_response);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _response.IsSuccess = false;
-        //        _response.ErrorMessages
-        //             = new List<string>() { ex.ToString() };
-        //    }
-        //    return _response;
-        //}
+                User dbUser = this.UserTableRepository.GetUsers().Result.FirstOrDefault(x => x.Email == loginRequest.Emial && x.Password == loginRequest.Password);
+                _response.Result = dbUser;
+                _response.StatusCode = HttpStatusCode.NoContent;
+                _response.IsSuccess = true;
+                return Ok(_response);
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages
+                     = new List<string>() { ex.ToString() };
+            }
+            return _response;
+        }
 
-        //[HttpPost(Name = "forgotPassword")]
-        //[ProducesResponseType(StatusCodes.Status204NoContent)]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
-        //public async Task<ActionResult<APIResponse>> forgotPassword([FromBody] ForgotPasswordRequestModel forgotPasswordRequest)
-        //{
-        //    try
-        //    {
-        //        if (forgotPasswordRequest == null)
-        //        {
-        //            return BadRequest();
-        //        }
+        [HttpPost("forgotPassword")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<APIResponse>> forgotPassword([FromBody] ForgotPasswordRequestModel forgotPasswordRequest)
+        {
+            try
+            {
+                if (forgotPasswordRequest == null)
+                {
+                    return BadRequest();
+                }
 
-        //        User dbUser = this.UserTableRepository.GetUsers().Result.FirstOrDefault(x => x.Email == forgotPasswordRequest.Email);
-        //        //write code to send mail for sending link of forgot password
-        //        _response.Result = dbUser;
-        //        _response.StatusCode = HttpStatusCode.NoContent;
-        //        _response.IsSuccess = true;
-        //        return Ok(_response);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _response.IsSuccess = false;
-        //        _response.ErrorMessages
-        //             = new List<string>() { ex.ToString() };
-        //    }
-        //    return _response;
-        //}
-
-
-        //[HttpPost("{id:int}" ,Name = "resetPassword")]
-        //[ProducesResponseType(StatusCodes.Status204NoContent)]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
-        //public async Task<ActionResult<APIResponse>> resetPassword(int id, [FromBody] ResetPasswordModel resetPasswordModel)
-        //{
-        //    try
-        //    {
-        //        if (resetPasswordModel == null)
-        //        {
-        //            return BadRequest();
-        //        }
-
-        //        User dbUser = await this.UserTableRepository.GetUserById(id);
-
-        //        if (resetPasswordModel.Password.Equals(resetPasswordModel.ConfirmPassword))
-        //        {
-        //           dbUser.Password = resetPasswordModel.ConfirmPassword;
-        //        }
-        //        //update password in database
-        //        await UserTableRepository.UpdateUser(dbUser, dbUser);
-        //        _response.Result = "Password update successfully";
-        //        _response.StatusCode = HttpStatusCode.NoContent;
-        //        _response.IsSuccess = true;
-        //        return Ok(_response);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _response.IsSuccess = false;
-        //        _response.ErrorMessages
-        //             = new List<string>() { ex.ToString() };
-        //    }
-        //    return _response;
-        //}
-
-        //[HttpPost(Name = "userRegistration")]
-        //[ProducesResponseType(StatusCodes.Status201Created)]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
-        //[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        //public async Task<ActionResult<APIResponse>> userRegistration([FromBody] UserRequestModel createDTO)
-        //{
-        //    try
-        //    {
-        //        if (!ModelState.IsValid)
-        //        {
-        //            return BadRequest(ModelState);
-        //        }
+                User dbUser = this.UserTableRepository.GetUsers().Result.FirstOrDefault(x => x.Email == forgotPasswordRequest.Email);
+                //write code to send mail for sending link of forgot password
+                _response.Result = dbUser;
+                _response.StatusCode = HttpStatusCode.NoContent;
+                _response.IsSuccess = true;
+                return Ok(_response);
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages
+                     = new List<string>() { ex.ToString() };
+            }
+            return _response;
+        }
 
 
-        //        if (createDTO == null)
-        //        {
-        //            return BadRequest(createDTO);
-        //        }
+        [HttpPost("resetPassword")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<APIResponse>> resetPassword(int id, [FromBody] ResetPasswordModel resetPasswordModel)
+        {
+            try
+            {
+                if (resetPasswordModel == null)
+                {
+                    return BadRequest();
+                }
 
-        //        User user = createDTO.ToEntity();
+                User dbUser = await this.UserTableRepository.GetUserById(id);
 
-        //        user = await UserTableRepository.AddUser(user);
-        //        _response.Result = user;
-        //        _response.StatusCode = HttpStatusCode.Created;
-        //        return CreatedAtRoute("GetUser", new { id = user.Id }, _response);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _response.IsSuccess = false;
-        //        _response.ErrorMessages
-        //             = new List<string>() { ex.ToString() };
-        //    }
-        //    return _response;
-        //}
+                if (resetPasswordModel.Password.Equals(resetPasswordModel.ConfirmPassword))
+                {
+                    dbUser.Password = resetPasswordModel.ConfirmPassword;
+                }
+                //update password in database
+                await UserTableRepository.UpdateUser(dbUser, dbUser);
+                _response.Result = "Password update successfully";
+                _response.StatusCode = HttpStatusCode.NoContent;
+                _response.IsSuccess = true;
+                return Ok(_response);
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages
+                     = new List<string>() { ex.ToString() };
+            }
+            return _response;
+        }
+
+        [HttpPost("userRegistration")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<APIResponse>> userRegistration([FromBody] UserRequestModel createDTO)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+
+                if (createDTO == null)
+                {
+                    return BadRequest(createDTO);
+                }
+
+                User user = createDTO.ToEntity();
+
+                user = await UserTableRepository.AddUser(user);
+                _response.Result = user;
+                _response.StatusCode = HttpStatusCode.Created;
+                return CreatedAtRoute("GetUser", new { id = user.Id }, _response);
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages
+                     = new List<string>() { ex.ToString() };
+            }
+            return _response;
+        }
 
 
     }
