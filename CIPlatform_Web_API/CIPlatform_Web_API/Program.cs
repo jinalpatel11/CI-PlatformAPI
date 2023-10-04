@@ -25,7 +25,7 @@ builder.Services.AddEntityFrameworkSqlServer();
 // Register your multiple dependencies here
 builder.Services.AddScoped<IUserTableRepository, UserTableRepository>();
 builder.Services.AddScoped<IDocumentTableRepository, DocumentTableRepository>();
-
+builder.Services.AddScoped<IMissionTableRepository, MissionTableRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
