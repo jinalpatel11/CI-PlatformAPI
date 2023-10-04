@@ -1,8 +1,11 @@
 using CIPlatform_Web_API.Infrastructure;
+using CIPlatform_Web_API.Models.Services;
 using CIPlatform_Web_API.Repositories;
 using CIPlatform_Web_API.Repositories.Interface;
+using CIPlatform_Web_API.Service;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +29,16 @@ builder.Services.AddEntityFrameworkSqlServer();
 builder.Services.AddScoped<IUserTableRepository, UserTableRepository>();
 builder.Services.AddScoped<IDocumentTableRepository, DocumentTableRepository>();
 builder.Services.AddScoped<IMissionTableRepository, MissionTableRepository>();
+
+
+
+// Load configuration settings from appsettings.json
+builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
+
+
+// Register the EmailService for DI
+builder.Services.AddScoped<EmailService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

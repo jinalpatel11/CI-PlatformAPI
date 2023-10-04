@@ -188,3 +188,8 @@ C:\Users\HP\Desktop\Study\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web_API\o
 C:\Users\HP\Desktop\Study\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web_API\obj\Debug\net7.0\CIPlatform_Web_API.pdb
 C:\Users\HP\Desktop\Study\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web_API\obj\Debug\net7.0\CIPlatform_Web_API.genruntimeconfig.cache
 C:\Users\HP\Desktop\Study\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web_API\obj\Debug\net7.0\ref\CIPlatform_Web_API.dll
+C:\Users\HP\Desktop\Study\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web_API\bin\Debug\net7.0\BouncyCastle.Cryptography.dll
+C:\Users\HP\Desktop\Study\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web_API\bin\Debug\net7.0\MailKit.dll
+C:\Users\HP\Desktop\Study\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web_API\bin\Debug\net7.0\MimeKit.dll
+C:\Users\HP\Desktop\Study\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web_API\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\HP\Desktop\Study\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web_API\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll

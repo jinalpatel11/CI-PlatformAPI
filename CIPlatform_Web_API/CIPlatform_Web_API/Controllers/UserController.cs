@@ -3,6 +3,7 @@ using CIPlatform_Web_API.Models;
 using CIPlatform_Web_API.Models.Request;
 using CIPlatform_Web_API.Models.Request.Users;
 using CIPlatform_Web_API.Repositories.Interface;
+using CIPlatform_Web_API.Service;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -15,10 +16,13 @@ namespace CIPlatform_Web_API.Controllers
     {
         private readonly IUserTableRepository UserTableRepository;
         protected APIResponse _response;
-        public UserController(IUserTableRepository UserTableRepository)
+        private readonly EmailService _emailService;
+        public UserController(IUserTableRepository UserTableRepository,
+            EmailService emailService)
         {
             this.UserTableRepository = UserTableRepository;
             _response = new();
+            _emailService = emailService;   
         }
 
 
@@ -218,9 +222,13 @@ namespace CIPlatform_Web_API.Controllers
                     return BadRequest();
                 }
 
-                User dbUser = this.UserTableRepository.GetUsers().Result.FirstOrDefault(x => x.Email == forgotPasswordRequest.Email);
+                IEnumerable<User> userList;
+                userList = await UserTableRepository.GetUsers();
+                User dbUser = userList.FirstOrDefault(x => x.Email == forgotPasswordRequest.Email);
                 //write code to send mail for sending link of forgot password
-                _response.Result = dbUser;
+              
+                await _emailService.SendEmailAsync(dbUser.Email, "Forgot password Link","Need to pass request body here UI link to of reset password");
+                _response.Result = "Email sent successfully";
                 _response.StatusCode = HttpStatusCode.NoContent;
                 _response.IsSuccess = true;
                 return Ok(_response);
@@ -231,7 +239,11 @@ namespace CIPlatform_Web_API.Controllers
                 _response.ErrorMessages
                      = new List<string>() { ex.ToString() };
             }
+
             return _response;
+
+
+            
         }
 
 
