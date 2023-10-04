@@ -4,15 +4,15 @@ namespace CIPlatform_Web_API.Repositories.Interface
 {
     public interface IMissionTableRepository
     {
-        Task<IEnumerable<MissionTable>> GetMissionTable();
+        Task<IEnumerable<Mission>> GetMissionTable();
 
-        Task<MissionTable> GetMissionTableById(int id);
+        Task<Mission> GetMissionTableById(int id);
 
-        Task<MissionTable> AddMissionTable(MissionTable MissionTable);
+        Task<Mission> AddMissionTable(Mission MissionTable);
 
-        Task<MissionTable> UpdateMissionTable(MissionTable dbMissionTable, MissionTable MissionTable);
+        Task<Mission> UpdateMissionTable(Mission dbMissionTable, Mission MissionTable);
 
-        Task DeleteMissionTable(MissionTable MissionTable);
+        Task DeleteMissionTable(Mission MissionTable);
 
     }
 }

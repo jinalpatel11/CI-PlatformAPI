@@ -60,9 +60,9 @@ namespace CIPlatform_Web_API.Models.Request
         public string? MissionAvailability { get; set; }
 
 
-        public MissionTable ToEntity()
+        public Mission ToEntity()
         {
-            return new MissionTable
+            return new Mission
             {
                CityId = this.CityId,
                CountryId= this.CountryId,

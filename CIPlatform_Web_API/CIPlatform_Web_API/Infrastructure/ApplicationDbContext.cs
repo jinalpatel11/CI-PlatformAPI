@@ -25,7 +25,7 @@ public partial class ApplicationDbContext : DbContext
 
     public virtual DbSet<LocalUser> LocalUsers { get; set; }
 
-    public virtual DbSet<MissionTable> MissionTables { get; set; }
+    public virtual DbSet<Mission> Missions { get; set; }
 
     public virtual DbSet<StoryTable> StoryTables { get; set; }
 
@@ -78,9 +78,8 @@ public partial class ApplicationDbContext : DbContext
             entity.HasOne(d => d.User).WithMany(p => p.DocumentTables).HasConstraintName("FK_DocumentTable_UserTable");
         });
 
-        modelBuilder.Entity<MissionTable>(entity =>
+        modelBuilder.Entity<Mission>(entity =>
         {
-            entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.MissionAvailability).IsFixedLength();
             entity.Property(e => e.MissionDescription).IsFixedLength();
             entity.Property(e => e.MissionDocumnets).IsFixedLength();
@@ -100,7 +99,7 @@ public partial class ApplicationDbContext : DbContext
             entity.Property(e => e.StoryTitle).IsFixedLength();
             entity.Property(e => e.VideoUrl).IsFixedLength();
 
-            entity.HasOne(d => d.Mission).WithMany(p => p.StoryTables).HasConstraintName("FK_StoryTable_MissionTable");
+            entity.HasOne(d => d.Mission).WithMany(p => p.StoryTables).HasConstraintName("FK_StoryTable_Mission");
 
             entity.HasOne(d => d.User).WithMany(p => p.StoryTables).HasConstraintName("FK_StoryTable_UserTable");
         });

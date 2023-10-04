@@ -30,7 +30,7 @@
             dbDocumentTable.Id = DocumentTable.Id;
         }
 
-        public static void Map(this MissionTable dbMissionTable, MissionTable MissionTable)
+        public static void Map(this Mission dbMissionTable, Mission MissionTable)
         {
             dbMissionTable.Id = MissionTable.Id;
         }

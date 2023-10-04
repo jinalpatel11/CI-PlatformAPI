@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 namespace CIPlatform_Web_API.Repositories
 {
   
-    public class MissionTableRepository : RepositoryBase<MissionTable>, IMissionTableRepository
+    public class MissionTableRepository : RepositoryBase<Mission>, IMissionTableRepository
     {
         private readonly ApplicationDbContext calistaContext;
 
@@ -15,20 +15,20 @@ namespace CIPlatform_Web_API.Repositories
             this.calistaContext = calistaContext;
         }
 
-        public async Task<IEnumerable<MissionTable>> GetMissionTable()
+        public async Task<IEnumerable<Mission>> GetMissionTable()
         {
             return await this.Find()
             .OrderByDescending(a => a.Id)
             .ToListAsync();
         }
 
-        public async Task<MissionTable> GetMissionTableById(int id)
+        public async Task<Mission> GetMissionTableById(int id)
         {
             return await this.Find(d => d.Id == id)
             .SingleOrDefaultAsync();
         }
 
-        public async Task<MissionTable> AddMissionTable(MissionTable MissionTable)
+        public async Task<Mission> AddMissionTable(Mission MissionTable)
         {
 
             this.CreateEntity(MissionTable);
@@ -38,7 +38,7 @@ namespace CIPlatform_Web_API.Repositories
             return MissionTable;
         }
 
-        public async Task<MissionTable> UpdateMissionTable(MissionTable dbMissionTable, MissionTable MissionTable)
+        public async Task<Mission> UpdateMissionTable(Mission dbMissionTable, Mission MissionTable)
         {
             MissionTable.Id = dbMissionTable.Id;
 
@@ -50,7 +50,7 @@ namespace CIPlatform_Web_API.Repositories
             return dbMissionTable;
         }
 
-        public async Task DeleteMissionTable(MissionTable MissionTable)
+        public async Task DeleteMissionTable(Mission MissionTable)
         {
             this.DeleteEntity(MissionTable);
 

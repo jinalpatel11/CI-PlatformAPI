@@ -6,8 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CIPlatform_Web_API.Infrastructure;
 
-[Table("MissionTable")]
-public partial class MissionTable
+[Table("Mission")]
+public partial class Mission
 {
     [Key]
     public int Id { get; set; }

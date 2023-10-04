@@ -20,13 +20,13 @@ namespace CIPlatform_Web_API.Controllers
         }
 
 
-        [HttpGet("{id:int}", Name = "GeMission")]
+        [HttpGet("{id:int}", Name = "GetMission")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<APIResponse>> GeMission(int id)
+        public async Task<ActionResult<APIResponse>> GetMission(int id)
         {
             try
             {
@@ -35,13 +35,13 @@ namespace CIPlatform_Web_API.Controllers
                     _response.StatusCode = HttpStatusCode.BadRequest;
                     return BadRequest(_response);
                 }
-                var villa = await missionTableRepository.GetMissionTableById(id);
-                if (villa == null)
+                var mission = await missionTableRepository.GetMissionTableById(id);
+                if (mission == null)
                 {
                     _response.StatusCode = HttpStatusCode.NotFound;
                     return NotFound(_response);
                 }
-                _response.Result = villa;
+                _response.Result = mission;
                 _response.StatusCode = HttpStatusCode.OK;
                 return Ok(_response);
             }
@@ -63,7 +63,7 @@ namespace CIPlatform_Web_API.Controllers
         {
             try
             {
-                IEnumerable<MissionTable> missionTables;
+                IEnumerable<Mission> missionTables;
                 missionTables = await missionTableRepository.GetMissionTable();
                 _response.Result = missionTables;
                 _response.StatusCode = HttpStatusCode.OK;
@@ -100,7 +100,7 @@ namespace CIPlatform_Web_API.Controllers
                     return BadRequest(createDTO);
                 }
 
-                MissionTable mission = createDTO.ToEntity();
+                Mission mission = createDTO.ToEntity();
 
                 mission = await missionTableRepository.AddMissionTable(mission);
                 _response.Result = mission;
@@ -161,8 +161,8 @@ namespace CIPlatform_Web_API.Controllers
                     return BadRequest();
                 }
 
-                MissionTable dbMission = await this.missionTableRepository.GetMissionTableById(id);
-                MissionTable model = updateDTO.ToEntity();
+                Mission dbMission = await this.missionTableRepository.GetMissionTableById(id);
+                Mission model = updateDTO.ToEntity();
 
                 await missionTableRepository.UpdateMissionTable(dbMission, model);
                 _response.StatusCode = HttpStatusCode.NoContent;

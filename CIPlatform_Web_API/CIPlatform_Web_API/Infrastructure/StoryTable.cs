@@ -43,7 +43,7 @@ public partial class StoryTable
 
     [ForeignKey("MissionId")]
     [InverseProperty("StoryTables")]
-    public virtual MissionTable? Mission { get; set; }
+    public virtual Mission? Mission { get; set; }
 
     [ForeignKey("UserId")]
     [InverseProperty("StoryTables")]
