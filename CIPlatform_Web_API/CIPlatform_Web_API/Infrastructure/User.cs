@@ -80,4 +80,7 @@ public partial class User
     [StringLength(10)]
     [Unicode(false)]
     public string? PhoneNumber { get; set; }
+
+    [InverseProperty("User")]
+    public virtual ICollection<Story> Stories { get; set; } = new List<Story>();
 }

@@ -35,9 +35,9 @@ namespace CIPlatform_Web_API.Models.Request
         public string StoryPhoto { get; set; }
 
 
-        public StoryTable ToEntity()
+        public Story ToEntity()
         {
-            return new StoryTable
+            return new Story
             {
                 StoryThumbnail = this.StoryTitle,
                 MissionId = this.MissionId,

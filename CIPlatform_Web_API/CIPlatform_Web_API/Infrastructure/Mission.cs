@@ -64,5 +64,5 @@ public partial class Mission
     public string? MissionAvailability { get; set; }
 
     [InverseProperty("Mission")]
-    public virtual ICollection<StoryTable> StoryTables { get; set; } = new List<StoryTable>();
+    public virtual ICollection<Story> Stories { get; set; } = new List<Story>();
 }

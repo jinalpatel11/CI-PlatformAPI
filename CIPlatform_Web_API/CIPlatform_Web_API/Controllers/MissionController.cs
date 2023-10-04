@@ -179,6 +179,36 @@ namespace CIPlatform_Web_API.Controllers
         }
 
 
+        [HttpGet("showAllMissions")]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<APIResponse>> GetMissions(
+    [FromQuery] string? theme,
+    [FromQuery] string? skills,
+    [FromQuery] string? search)
+        {
+            try
+            {
+                IEnumerable<Mission> missionTables;
+
+                // Query the repository for missions based on filters and search terms
+                missionTables = await missionTableRepository.FilterMissions(theme, skills, search);
+
+                _response.Result = missionTables;
+                _response.StatusCode = HttpStatusCode.OK;
+                return Ok(_response);
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string>() { ex.ToString() };
+            }
+
+            return _response;
+        }
+
+
     }
 
 }

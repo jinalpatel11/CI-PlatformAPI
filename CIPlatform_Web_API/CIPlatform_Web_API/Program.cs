@@ -29,7 +29,7 @@ builder.Services.AddEntityFrameworkSqlServer();
 builder.Services.AddScoped<IUserTableRepository, UserTableRepository>();
 builder.Services.AddScoped<IDocumentTableRepository, DocumentTableRepository>();
 builder.Services.AddScoped<IMissionTableRepository, MissionTableRepository>();
-
+builder.Services.AddScoped<IStoryTableRepository,StoryTableRepository>();
 
 
 // Load configuration settings from appsettings.json

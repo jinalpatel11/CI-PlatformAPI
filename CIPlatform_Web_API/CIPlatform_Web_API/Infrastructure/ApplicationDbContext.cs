@@ -27,9 +27,7 @@ public partial class ApplicationDbContext : DbContext
 
     public virtual DbSet<Mission> Missions { get; set; }
 
-    public virtual DbSet<StoryTable> StoryTables { get; set; }
-
-    public virtual DbSet<Table1> Table1s { get; set; }
+    public virtual DbSet<Story> Stories { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
 
@@ -91,23 +89,17 @@ public partial class ApplicationDbContext : DbContext
             entity.Property(e => e.MissionTitle).IsFixedLength();
         });
 
-        modelBuilder.Entity<StoryTable>(entity =>
+        modelBuilder.Entity<Story>(entity =>
         {
-            entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.StoryDescription).IsFixedLength();
+            entity.Property(e => e.StoryPhoto).IsFixedLength();
             entity.Property(e => e.StoryThumbnail).IsFixedLength();
             entity.Property(e => e.StoryTitle).IsFixedLength();
             entity.Property(e => e.VideoUrl).IsFixedLength();
 
-            entity.HasOne(d => d.Mission).WithMany(p => p.StoryTables).HasConstraintName("FK_StoryTable_Mission");
+            entity.HasOne(d => d.Mission).WithMany(p => p.Stories).HasConstraintName("FK_Story_Story");
 
-            entity.HasOne(d => d.User).WithMany(p => p.StoryTables).HasConstraintName("FK_StoryTable_UserTable");
-        });
-
-        modelBuilder.Entity<Table1>(entity =>
-        {
-            entity.Property(e => e.DfgsFdgdf).IsFixedLength();
-            entity.Property(e => e.FgfdFgdf).IsFixedLength();
+            entity.HasOne(d => d.User).WithMany(p => p.Stories).HasConstraintName("FK_Story_User");
         });
 
         modelBuilder.Entity<User>(entity =>

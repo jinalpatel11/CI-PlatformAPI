@@ -75,8 +75,5 @@ public partial class UserTable
     public virtual ICollection<DocumentTable> DocumentTables { get; set; } = new List<DocumentTable>();
 
     [InverseProperty("User")]
-    public virtual ICollection<StoryTable> StoryTables { get; set; } = new List<StoryTable>();
-
-    [InverseProperty("User")]
     public virtual ICollection<VolunteeringTable> VolunteeringTables { get; set; } = new List<VolunteeringTable>();
 }

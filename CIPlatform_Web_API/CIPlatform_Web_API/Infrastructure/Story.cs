@@ -6,8 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CIPlatform_Web_API.Infrastructure;
 
-[Table("StoryTable")]
-public partial class StoryTable
+[Table("Story")]
+public partial class Story
 {
     [Key]
     public int Id { get; set; }
@@ -36,16 +36,17 @@ public partial class StoryTable
     [Unicode(false)]
     public string? VideoUrl { get; set; }
 
-    [Column(TypeName = "image")]
-    public byte[]? StoryPhoto { get; set; }
+    [StringLength(10)]
+    [Unicode(false)]
+    public string? StoryPhoto { get; set; }
 
     public int? Views { get; set; }
 
     [ForeignKey("MissionId")]
-    [InverseProperty("StoryTables")]
+    [InverseProperty("Stories")]
     public virtual Mission? Mission { get; set; }
 
     [ForeignKey("UserId")]
-    [InverseProperty("StoryTables")]
-    public virtual UserTable? User { get; set; }
+    [InverseProperty("Stories")]
+    public virtual User? User { get; set; }
 }

@@ -14,5 +14,7 @@ namespace CIPlatform_Web_API.Repositories.Interface
 
         Task DeleteMissionTable(Mission MissionTable);
 
+        Task<IEnumerable<Mission>> FilterMissions(string? theme, string? skills, string? search);
+
     }
 }

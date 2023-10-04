@@ -35,7 +35,7 @@
             dbMissionTable.Id = MissionTable.Id;
         }
 
-        public static void Map(this StoryTable dbStoryTable, StoryTable StoryTable)
+        public static void Map(this Story dbStoryTable, Story StoryTable)
         {
             dbStoryTable.Id = StoryTable.Id;
         }

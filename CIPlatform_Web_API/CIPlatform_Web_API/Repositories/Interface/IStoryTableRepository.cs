@@ -4,15 +4,15 @@ namespace CIPlatform_Web_API.Repositories.Interface
 {
     public interface IStoryTableRepository
     {
-        Task<IEnumerable<StoryTable>> GetStoryTable();
+        Task<IEnumerable<Story>> GetStoryTable();
 
-        Task<StoryTable> GetStoryTableById(int id);
+        Task<Story> GetStoryTableById(int id);
 
-        Task<StoryTable> AddStoryTable(StoryTable StoryTable);
+        Task<Story> AddStoryTable(Story StoryTable);
 
-        Task<StoryTable> UpdateStoryTable(StoryTable dbStoryTable, StoryTable StoryTable);
+        Task<Story> UpdateStoryTable(Story dbStoryTable, Story StoryTable);
 
-        Task DeleteStoryTable(StoryTable StoryTable);
+        Task DeleteStoryTable(Story StoryTable);
 
     }
 }

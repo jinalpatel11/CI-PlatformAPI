@@ -57,6 +57,33 @@ namespace CIPlatform_Web_API.Repositories
             await this.SaveAsync();
         }
 
+
+        public async Task<IEnumerable<Mission>> FilterMissions(string? theme, string? skills, string? search)
+        {
+            IQueryable<Mission> query = this.Find();
+
+            if (!string.IsNullOrEmpty(theme))
+            {
+                query = query.Where(m => m.MissionTheme == theme);
+            }
+
+            if (!string.IsNullOrEmpty(skills))
+            {
+                query = query.Where(m => m.MissionSkills == skills);
+            }
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                query = query.Where(m =>
+                    m.MissionTitle.Contains(search) ||
+                    m.MissionDescription.Contains(search));
+            }
+
+            return await query.ToListAsync();
+        }
+
+
+
     }
 
 }

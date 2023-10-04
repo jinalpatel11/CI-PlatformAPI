@@ -63,9 +63,9 @@ namespace CIPlatform_Web_API.Controllers
         {
             try
             {
-                IEnumerable<StoryTable> villaList;
-                villaList = await StoryTableRepository.GetStoryTable();
-                _response.Result = villaList;
+                IEnumerable<Story> stories;
+                stories = await StoryTableRepository.GetStoryTable();
+                _response.Result = stories;
                 _response.StatusCode = HttpStatusCode.OK;
                 return Ok(_response);
 
@@ -100,12 +100,12 @@ namespace CIPlatform_Web_API.Controllers
                     return BadRequest(createDTO);
                 }
 
-                StoryTable villa = createDTO.ToEntity();
+                Story Story = createDTO.ToEntity();
 
-                villa = await StoryTableRepository.AddStoryTable(villa);
-                _response.Result = villa;
+                Story = await StoryTableRepository.AddStoryTable(Story);
+                _response.Result = Story;
                 _response.StatusCode = HttpStatusCode.Created;
-                return CreatedAtRoute("GetStoryById", new { id = villa.Id }, _response);
+                return CreatedAtRoute("GetStoryById", new { id = Story.Id }, _response);
             }
             catch (Exception ex)
             {
@@ -161,10 +161,10 @@ namespace CIPlatform_Web_API.Controllers
                     return BadRequest();
                 }
 
-                StoryTable dbUser = await this.StoryTableRepository.GetStoryTableById(id);
-                StoryTable model = updateDTO.ToEntity();
+                Story dbStory = await this.StoryTableRepository.GetStoryTableById(id);
+                Story model = updateDTO.ToEntity();
 
-                await StoryTableRepository.UpdateStoryTable(dbUser, model);
+                await StoryTableRepository.UpdateStoryTable(dbStory, model);
                 _response.StatusCode = HttpStatusCode.NoContent;
                 _response.IsSuccess = true;
                 return Ok(_response);
