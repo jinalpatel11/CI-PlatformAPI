@@ -1,8 +1,5 @@
 ﻿using CIPlatform_Web_API.Infrastructure;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CIPlatform_Web_API.Models.Request
 {
@@ -34,12 +31,12 @@ namespace CIPlatform_Web_API.Models.Request
         {
             return new User
             {
-               FirstName= this.FirstName,
-               Surname= this.Surname,
-               Email= this.Email ,
-               Password= this.Password ,
-               PhoneNumber = this.PhoneNumber
-            
+                FirstName = this.FirstName,
+                Surname = this.Surname,
+                Email = this.Email,
+                Password = this.Password,
+                PhoneNumber = this.PhoneNumber
+
             };
         }
     }

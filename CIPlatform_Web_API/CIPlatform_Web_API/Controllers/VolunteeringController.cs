@@ -1,6 +1,6 @@
 ﻿using CIPlatform_Web_API.Infrastructure;
-using CIPlatform_Web_API.Models.Request;
 using CIPlatform_Web_API.Models;
+using CIPlatform_Web_API.Models.Request;
 using CIPlatform_Web_API.Repositories.Interface;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;

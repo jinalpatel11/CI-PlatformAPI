@@ -22,7 +22,7 @@ namespace CIPlatform_Web_API.Controllers
         {
             this.UserTableRepository = UserTableRepository;
             _response = new();
-            _emailService = emailService;   
+            _emailService = emailService;
         }
 
 
@@ -226,8 +226,8 @@ namespace CIPlatform_Web_API.Controllers
                 userList = await UserTableRepository.GetUsers();
                 User dbUser = userList.FirstOrDefault(x => x.Email == forgotPasswordRequest.Email);
                 //write code to send mail for sending link of forgot password
-              
-                await _emailService.SendEmailAsync(dbUser.Email, "Forgot password Link","Need to pass request body here UI link to of reset password");
+
+                await _emailService.SendEmailAsync(dbUser.Email, "Forgot password Link", "Need to pass request body here UI link to of reset password");
                 _response.Result = "Email sent successfully";
                 _response.StatusCode = HttpStatusCode.NoContent;
                 _response.IsSuccess = true;
@@ -243,7 +243,7 @@ namespace CIPlatform_Web_API.Controllers
             return _response;
 
 
-            
+
         }
 
 
@@ -318,4 +318,6 @@ namespace CIPlatform_Web_API.Controllers
 
 
     }
+
+
 }

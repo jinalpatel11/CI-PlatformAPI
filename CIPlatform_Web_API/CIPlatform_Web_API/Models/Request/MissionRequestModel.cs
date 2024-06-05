@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using CIPlatform_Web_API.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations;
-using CIPlatform_Web_API.Infrastructure;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CIPlatform_Web_API.Models.Request
 {
@@ -64,21 +64,21 @@ namespace CIPlatform_Web_API.Models.Request
         {
             return new Mission
             {
-               CityId = this.CityId,
-               CountryId= this.CountryId,
-               MissionAvailability  = this.MissionAvailability,
-               MissionDescription = this.MissionDescription ,
-               MissionDocumnets = this.MissionDocumnets   ,
-               MissionEndDate = this.MissionEndDate     ,
-               MissionImages = this.MissionImages   ,
-               MissionOrganisationDetail = this.MissionOrganisationDetail   ,
-               MissionOrganisationName= this.MissionOrganisationName ,
-               MissionRegistrationDeadline = this.MissionRegistrationDeadline ,
-               MissionSkills= this.MissionSkills ,
-               MissionStartDate= this.MissionStartDate ,
-               MissionTheme= this.MissionTheme ,
-               MissionTitle = this.MissionTitle ,   
-               TotalSeats= this.TotalSeats ,
+                CityId = this.CityId,
+                CountryId = this.CountryId,
+                MissionAvailability = this.MissionAvailability,
+                MissionDescription = this.MissionDescription,
+                MissionDocumnets = this.MissionDocumnets,
+                MissionEndDate = this.MissionEndDate,
+                MissionImages = this.MissionImages,
+                MissionOrganisationDetail = this.MissionOrganisationDetail,
+                MissionOrganisationName = this.MissionOrganisationName,
+                MissionRegistrationDeadline = this.MissionRegistrationDeadline,
+                MissionSkills = this.MissionSkills,
+                MissionStartDate = this.MissionStartDate,
+                MissionTheme = this.MissionTheme,
+                MissionTitle = this.MissionTitle,
+                TotalSeats = this.TotalSeats,
             };
         }
     }

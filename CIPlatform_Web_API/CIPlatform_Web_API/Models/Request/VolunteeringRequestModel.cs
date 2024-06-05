@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using CIPlatform_Web_API.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations;
-using CIPlatform_Web_API.Infrastructure;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CIPlatform_Web_API.Models.Request
 {
