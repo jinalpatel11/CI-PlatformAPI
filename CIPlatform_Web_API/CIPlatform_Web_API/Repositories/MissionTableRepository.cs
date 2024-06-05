@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CIPlatform_Web_API.Repositories
 {
-  
+
     public class MissionTableRepository : RepositoryBase<Mission>, IMissionTableRepository
     {
         private readonly ApplicationDbContext calistaContext;
