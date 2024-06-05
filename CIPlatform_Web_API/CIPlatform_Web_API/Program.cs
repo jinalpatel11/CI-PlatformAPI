@@ -1,23 +1,21 @@
 using CIPlatform_Web_API.Infrastructure;
-using CIPlatform_Web_API.Models.Services;
 using CIPlatform_Web_API.Repositories;
 using CIPlatform_Web_API.Repositories.Interface;
 using CIPlatform_Web_API.Service;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<ApplicationDbContext>(option =>
 {
-    // option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultSQLConnection"));
-    option.UseSqlServer("Data Source=DESKTOP-2QFP1NN; Initial Catalog=CIPlatform_API; Trusted_Connection=True; TrustServerCertificate=True;");
+    option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    // option.UseSqlServer("Data Source=DESKTOP-2QFP1NN; Initial Catalog=CIPlatform_API; Trusted_Connection=True; TrustServerCertificate=True;");
 
 });
 
-builder.Services.AddEntityFrameworkSqlServer();
+//builder.Services.AddEntityFrameworkSqlServer();
 //builder.Services.AddDbContextPool<ApplicationDbContext>((serviceProvider, optionsBuilder) =>
 //{
 //    optionsBuilder.UseSqlServer(builder.Configuration.GetConnectionString("DefaultSQLConnection"));
@@ -29,7 +27,7 @@ builder.Services.AddEntityFrameworkSqlServer();
 builder.Services.AddScoped<IUserTableRepository, UserTableRepository>();
 builder.Services.AddScoped<IDocumentTableRepository, DocumentTableRepository>();
 builder.Services.AddScoped<IMissionTableRepository, MissionTableRepository>();
-builder.Services.AddScoped<IStoryTableRepository,StoryTableRepository>();
+builder.Services.AddScoped<IStoryTableRepository, StoryTableRepository>();
 
 
 // Load configuration settings from appsettings.json

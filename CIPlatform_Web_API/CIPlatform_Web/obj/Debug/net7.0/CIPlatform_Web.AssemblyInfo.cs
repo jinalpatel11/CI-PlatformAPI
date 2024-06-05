@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CIPlatform_Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+810205c11cdf5e1661c4a55bfe9221b4bd2c2cfa")]
 [assembly: System.Reflection.AssemblyProductAttribute("CIPlatform_Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CIPlatform_Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

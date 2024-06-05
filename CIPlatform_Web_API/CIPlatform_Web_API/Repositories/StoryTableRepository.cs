@@ -4,7 +4,7 @@
     using CIPlatform_Web_API.Repositories.Interface;
     using Microsoft.EntityFrameworkCore;
 
-    public class StoryTableRepository : RepositoryBase< Story>, IStoryTableRepository
+    public class StoryTableRepository : RepositoryBase<Story>, IStoryTableRepository
     {
         private readonly ApplicationDbContext calistaContext;
 

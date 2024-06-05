@@ -1,6 +1,5 @@
 ﻿namespace CIPlatform_Web_API.Service
 {
-    using MailKit.Net.Smtp;
     using MimeKit;
     using System;
     using System.Threading.Tasks;

@@ -80,3 +80,45 @@ C:\Users\HP\Desktop\Study\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\D
 C:\Users\HP\Desktop\Study\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\CIPlatform_Web.pdb
 C:\Users\HP\Desktop\Study\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\CIPlatform_Web.genruntimeconfig.cache
 C:\Users\HP\Desktop\Study\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\ref\CIPlatform_Web.dll
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\bin\Debug\net7.0\appsettings.Development.json
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\bin\Debug\net7.0\appsettings.json
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\bin\Debug\net7.0\CIPlatform_Web.staticwebassets.runtime.json
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\bin\Debug\net7.0\CIPlatform_Web.exe
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\bin\Debug\net7.0\CIPlatform_Web.deps.json
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\bin\Debug\net7.0\CIPlatform_Web.runtimeconfig.json
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\bin\Debug\net7.0\CIPlatform_Web.dll
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\bin\Debug\net7.0\CIPlatform_Web.pdb
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\bin\Debug\net7.0\System.Net.Http.Formatting.dll
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\bin\Debug\net7.0\System.Web.Http.dll
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\bin\Debug\net7.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\bin\Debug\net7.0\Pipelines.Sockets.Unofficial.dll
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\bin\Debug\net7.0\StackExchange.Redis.dll
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\bin\Debug\net7.0\Swashbuckle.Core.dll
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\CIPlatform_Web.csproj.AssemblyReference.cache
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\CIPlatform_Web.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\CIPlatform_Web.AssemblyInfoInputs.cache
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\CIPlatform_Web.AssemblyInfo.cs
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\CIPlatform_Web.csproj.CoreCompileInputs.cache
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\CIPlatform_Web.MvcApplicationPartsAssemblyInfo.cache
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\CIPlatform_Web.RazorAssemblyInfo.cache
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\CIPlatform_Web.RazorAssemblyInfo.cs
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\CIPlatform_Web.sourcelink.json
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\staticwebassets.build.json
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\staticwebassets.development.json
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\staticwebassets\msbuild.CIPlatform_Web.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\staticwebassets\msbuild.build.CIPlatform_Web.props
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.CIPlatform_Web.props
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.CIPlatform_Web.props
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\staticwebassets.pack.json
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\scopedcss\bundle\CIPlatform_Web.styles.css
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\scopedcss\projectbundle\CIPlatform_Web.bundle.scp.css
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\CIPlatfo.561936EA.Up2Date
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\CIPlatform_Web.dll
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\refint\CIPlatform_Web.dll
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\CIPlatform_Web.pdb
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\CIPlatform_Web.genruntimeconfig.cache
+D:\Project2024\old work\CI-PlatformAPI\CIPlatform_Web_API\CIPlatform_Web\obj\Debug\net7.0\ref\CIPlatform_Web.dll
